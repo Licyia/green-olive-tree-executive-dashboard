@@ -1,8 +1,8 @@
 # Green Olive Tree Executive Dashboard
 
-An executive reporting project built in Power BI to monitor a portfolio of projects, budgets, task delivery, overdue work, and risk. It includes the Power BI report, the CSV source dataset, and screenshots of the report in desktop and mobile layouts.
+A Power BI portfolio project: an executive report that monitors a portfolio of projects, budgets, task delivery, overdue work, and risk. The repository contains the Power BI report, the CSV source extract, and screenshots of the report in desktop and mobile layouts.
 
-> **Portfolio demonstration:** Green Olive Tree is an invented company, and the project/task data, names, and figures are improvised synthetic data created for practice. This is a learning dashboard, not live company reporting. The dataset contains 504 task records across 28 projects.
+The project covers 28 projects and 504 tasks, and shows how requirements gathering, data preparation, modelling, and visual design come together in one stakeholder-ready report.
 
 ## Dashboard preview
 
@@ -36,21 +36,21 @@ The report uses a project/task dataset as its source, shapes the fields for repo
 - How much budget remains across the portfolio?
 - How can an executive summary be presented alongside detailed project comparisons?
 
-## Example insights from the report
+## Key results
 
-- The portfolio contains **28 projects** and **504 tasks**.
+- The portfolio contains **28 projects** and **504 tasks**, each assigned to a distinct team member.
 - Total allocated budget is approximately **$1.38M**; actual cost is approximately **$694K**.
-- The report shows approximately **$683K** of budget remaining.
-- **122 tasks are overdue**; the report highlights overdue delivery as an area for attention.
+- Approximately **$683K** of budget remains.
+- **122 tasks are overdue**; the report highlights overdue delivery as the main area for attention.
 - The dashboard combines portfolio-level KPI cards, project budget comparisons, task-status distribution, and narrative insight panels.
 
-Figures are rounded as displayed in the report and depend on the included sample dataset.
+Figures are rounded as displayed in the report.
 
 ## Report overview and business context
 
-![Green Olive Tree report overview, including its fictional business context, stakeholder questions, and key findings](report-overview.png)
+![Green Olive Tree report overview, including business context, stakeholder questions, and key findings](report-overview.png)
 
-Green Olive Tree is a fictional, family-run olive-oil business used to make a realistic portfolio-planning scenario. The report presents 28 initiatives across eight operation lines and is designed to help leaders assess delivery progress, budget position, and risk. It guides readers from the Executive Overview to Task Delivery & Risk, then to a project-level task register through drill-through.
+The report is built around The Green Olive Tree, a family-run olive-oil business that grows, mills and bottles extra-virgin olive oil. It presents 28 initiatives across eight operation lines and helps leaders assess delivery progress, budget position, and risk. It guides readers from the Executive Overview to Task Delivery & Risk, then to a project-level task register through drill-through.
 
 ### Questions the report answers
 
@@ -59,7 +59,7 @@ Green Olive Tree is a fictional, family-run olive-oil business used to make a re
 - Where is overdue work concentrated, and are high-risk tasks progressing?
 - For a selected initiative, who owns the work, what is late, and how much budget remains?
 
-### Illustrative findings
+### Key findings
 
 - **Budget:** About **$1.38M** approved, **$0.69M** spent (50%), and **$0.68M** remaining; no initiative is over budget.
 - **Budget watchlist:** Graham and Sons (97%), Mason, Andersen and Nelson (96%), Morrison-Davis (90%), and Page, Douglas and Cunningham (85%) are near their allocated ceilings.
@@ -67,17 +67,32 @@ Green Olive Tree is a fictional, family-run olive-oil business used to make a re
 - **Risk:** 181 tasks (36%) are classified as high risk; 137 remain open and 40 are already overdue.
 - **Suggested focus:** Larson-Wilkins has the most overdue (8) and high-risk (11) tasks. Morrison-Davis and Page, Douglas and Cunningham each combine high spend with seven overdue tasks.
 
-These are scenario findings from improvised data, not operational facts about a real company. Percentages are rounded as shown in the report.
+Percentages are rounded as shown in the report.
 
 ### Stakeholders and navigation
 
-The report is intended to support a Managing Director's portfolio view, a Finance Controller's budget monitoring, and Operations and Quality & Compliance leaders' delivery and risk follow-up. Commercial leads and project owners can use the report to review revenue-facing work and task ownership. Start with Executive Overview, use Task Delivery & Risk to investigate exceptions, and drill through a project to inspect its task register.
+The report supports a Managing Director's portfolio view, a Finance Controller's budget monitoring, and Operations and Quality & Compliance leaders' delivery and risk follow-up. Commercial leads and project owners can use it to review revenue-facing work and task ownership. Start with Executive Overview, use Task Delivery & Risk to investigate exceptions, and drill through a project to inspect its task register.
 
 ### Data and model notes
 
-The report's About panel describes an improvised source with 504 task records, 28 projects, and 11 fields, shaped in Power Query into a project dimension, task fact table, and fiscal date table for FY2024/25. It also notes that names are fictional, amounts are USD, the illustrated due date is 6 August 2024, each task maps to an operation line, and project budgets are split evenly across tasks for task-level views.
+The report's About panel describes a source of 504 task records and 11 fields, shaped in Power Query into a star schema: a project dimension (`DimProject`), a task fact table (`FactTasks`), and a fiscal date table for FY2024/25. Amounts are in USD, all tasks use the due date 6 August 2024, each task maps to an operation line, and project budgets are split evenly across tasks for task-level views.
 
-The companion CSV included in this repository has 18 columns, including project/task attributes, operation-line mapping, and task-level budget fields. The report overview and supplied CSV therefore describe different source schemas; if Power BI requests a source or refresh mapping, confirm the query's expected column names before refreshing. The dataset and all displayed values are illustrative.
+The CSV in this repository is a wider extract of the same dataset: it has 18 columns, including operation-line mapping and task-level budget fields that were not all loaded into the report. If Power BI asks for the source file, select `Green_Olive_Tree_project_tasks_USD.csv` and confirm the query's expected column names before refreshing.
+
+See [REQUIREMENTS_AND_DATA_DICTIONARY.md](REQUIREMENTS_AND_DATA_DICTIONARY.md) for stakeholder requirements, the data model, a column-by-column data dictionary, and measure descriptions.
+
+### Report pages
+
+| Page | Purpose |
+|---|---|
+| About this Report | Business context, stakeholders and priorities, questions answered, key findings, data used |
+| Executive Overview | Portfolio KPIs, budget vs actual by project, task status distribution, key insights |
+| Task Delivery & Risk | Overdue and high-risk work by project and operation line, with slicers |
+| Project Details | Drill-through task register for a selected project: owner, status, due date, priority, risk, budget |
+
+### DAX measures
+
+Total Projects, Total Tasks, Total Budget, Total Actual Cost, Budget Variance, Budget Utilization %, Overdue Tasks, High Risk Tasks, On-Time Completion %, Budget Status Colour, and Selected Project.
 
 ## Files
 
@@ -86,6 +101,7 @@ green-olive-tree-executive-dashboard/
 ├── Green Olive Tree - Executive Report.pbix
 ├── Green_Olive_Tree_project_tasks_USD.csv
 ├── README.md
+├── REQUIREMENTS_AND_DATA_DICTIONARY.md
 ├── report-overview.png
 ├── executive-dashboard.png
 └── dashboard-mobile-layout.png
@@ -103,17 +119,16 @@ The screenshots are static previews. Publishing a refreshed version to Power BI 
 
 ## Skills demonstrated
 
-- Power Query data preparation and source management
-- KPI and measure design in Power BI
-- Executive dashboard layout and visual communication
+- Requirements gathering: stakeholders, needs, priorities, and the questions the report must answer
+- Power Query data preparation and star-schema modelling
+- KPI and measure design in DAX
+- Executive dashboard layout, drill-through navigation, and visual communication
 - Budget-versus-actual analysis
 - Task status, overdue work, priority, and risk reporting
 - Desktop and mobile report presentation
 
 ## Future roadmap
 
-- Add a data dictionary and document measure definitions
-- Add an executive project-detail drill-through page
-- Validate team-member counts against distinct people rather than task-row counts
+- Document the exact DAX definition of each measure
 - Add a refresh checklist and data-quality checks
 - Refine accessibility with contrast, labels, and keyboard navigation
