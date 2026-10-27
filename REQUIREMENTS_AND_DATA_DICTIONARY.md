@@ -78,7 +78,3 @@ Described by purpose; the exact DAX is in the PBIX.
 | Budget Status Colour | Colour flag for projects approaching their budget ceiling |
 | Selected Project | Project chosen for drill-through |
 
-## 6. Open items
-
-- Add a data-quality checklist for each refresh (row count, distinct projects, budget reconciliation).
-- Vary due dates per task so overdue analysis can track ageing.
