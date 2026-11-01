@@ -1,18 +1,20 @@
 # Green Olive Tree Executive Dashboard
 
-A Power BI portfolio project: an executive report that monitors a portfolio of projects, budgets, task delivery, overdue work, and risk. The repository contains the Power BI report, the CSV source extract, and screenshots of the report in desktop and mobile layouts.
+A Power BI portfolio project: an executive report that monitors a portfolio of projects, budgets, task delivery, overdue work, and risk. The repository contains the Power BI report, the CSV source extract, requirements and data dictionary, and a report overview.
 
 The project covers 28 projects and 504 tasks, and shows how requirements gathering, data preparation, modelling, and visual design come together in one stakeholder-ready report.
 
-## Dashboard preview
+## Live Power BI app
 
-### Executive dashboard
+The Green Olive Tree Power BI app brings together three role-focused dashboard views:
 
-![Green Olive Tree executive dashboard](executive-dashboard.png)
+- **Executive:** headline KPIs and areas that need action.
+- **Analyst:** project-level drill-down across delivery status and risk.
+- **Information Worker:** the task register and day-to-day priorities.
 
-### Mobile layout
+[Open the Green Olive Tree Power BI app](https://app.powerbi.com/groups/62a6ca68-350f-4780-bdd1-385a38b011ab/orgapps/1e96532b-0768-4a86-af79-8e45b4c8f680?ctid=2ba7052e-9a8c-48e5-bfba-b517c8f74caa)
 
-![Green Olive Tree dashboard mobile layout](dashboard-mobile-layout.png)
+Sign-in and existing access to the app are required.
 
 ## Architecture
 
@@ -102,9 +104,7 @@ green-olive-tree-executive-dashboard/
 ├── Green_Olive_Tree_project_tasks_USD.csv
 ├── README.md
 ├── REQUIREMENTS_AND_DATA_DICTIONARY.md
-├── report-overview.png
-├── executive-dashboard.png
-└── dashboard-mobile-layout.png
+└── report-overview.png
 ```
 
 ## Open the project
@@ -132,3 +132,5 @@ The screenshots are static previews. Publishing a refreshed version to Power BI 
 - Document the exact DAX definition of each measure
 - Add a refresh checklist and data-quality checks
 - Refine accessibility with contrast, labels, and keyboard navigation
+
+
