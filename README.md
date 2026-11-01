@@ -127,10 +127,4 @@ The screenshots are static previews. Publishing a refreshed version to Power BI 
 - Task status, overdue work, priority, and risk reporting
 - Desktop and mobile report presentation
 
-## Future roadmap
-
-- Document the exact DAX definition of each measure
-- Add a refresh checklist and data-quality checks
-- Refine accessibility with contrast, labels, and keyboard navigation
-
 
